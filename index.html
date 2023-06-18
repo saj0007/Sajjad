@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Load JSON Data</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        form {
+            margin: 20px 0;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Form for user input -->
+    <form id="nameForm">
+        <input type="text" id="nameInput" placeholder="Enter a name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Placeholder for the result -->
+    <div id="result"></div>
+
+    <script>
+        // On document ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Getting form and result container references
+            const form = document.querySelector('#nameForm');
+            const result = document.querySelector('#result');
+            
+            // Loading the data from the JSON file
+            fetch('./data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Event listener for form submission
+                    form.addEventListener('submit', function(event) {
+                        // Preventing the default form submission
+                        event.preventDefault();
+
+                        // Getting the user input
+                        const name = document.querySelector('#nameInput').value;
+
+                        // Finding the person in the data
+                        const person = data.person.find(object => object.name.toLowerCase() === name.toLowerCase());
+
+                        // Displaying the person's details or a not-found message
+                        result.innerText = person ? JSON.stringify(person, null, 2) : 'Person not found';
+                    });
+                })
+                .catch(err => {
+                    result.innerText = 'Error loading data: ' + err.message;
+                });
+        });
+    </script>
+</body>
+</html>

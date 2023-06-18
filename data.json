@@ -1,0 +1,11 @@
+{
+    "person":[
+        {
+            "name": "Sajjad",
+            "age": 23,
+            "email": "md.sajjad@students.cdu.edu.au",
+            "phone": "0413270579"
+        }
+    ]
+
+}

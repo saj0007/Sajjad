@@ -3,8 +3,26 @@
         {
             "name": "Sajjad",
             "age": 23,
-            "email": "md.sajjad@students.cdu.edu.au",
-            "phone": "0413270579"
+            "email": "sajjad@gmail.com",
+            "phone": "413270579"
+        },
+        {
+            "name": "Satish",
+            "age": 23,
+            "email": "satish@gmail.com",
+            "phone": "+61 3 8123 4568"
+        },
+        {
+            "name": "Alice",
+            "age": 28,
+            "email": "alice@gmail.com",
+            "phone": "+61 4 7123 4569"
+        },
+        {
+            "name": "Jhon",
+            "age": 26,
+            "email": "Jhon@gmail.com",
+            "phone": "+61 5 6123 4570"
         }
     ]
 
